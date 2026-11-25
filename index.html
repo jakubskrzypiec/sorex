@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOREX - Okna | Drzwi | Markizy | Pergole | Bramy — Wrocław</title>
+<meta name="description" content="SOREX — od 1997 roku sprzedaż i montaż okien PCV VEKA, drzwi, markiz tarasowych, pergoli, rolet i bram garażowych we Wrocławiu i w całej Polsce. Pomiar i doradztwo bezpłatne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;
+  --soft:#F4F7FB;
+  --ink:#0F172A;
+  --text:#334155;
+  --muted:#64748B;
+  --line:#E2E8F0;
+  --blue:#1D5FE0;
+  --blue-d:#1548AE;
+  --blue-l:#E8F0FE;
+  --r:20px;
+  --pad:clamp(18px,5vw,90px);
+  --f:"Manrope",system-ui,-apple-system,sans-serif;
+  --s:"Instrument Serif",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit;color:inherit}
+.wrap{max-width:1300px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.h2{font-size:clamp(30px,3.6vw,50px);font-weight:600;color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-top:12px}
+.dim{color:inherit}
+.hero h1 .dim{color:inherit}
+.sec{padding:clamp(80px,10vw,130px) 0;overflow-x:clip}
+.sec--soft{background:var(--soft)}
+.lead{color:var(--muted);max-width:58ch;margin-top:14px}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:100}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),#6FA8FF);transform-origin:left;transform:scaleX(0)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 22px;border-radius:9px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;border:0;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:#1E293B}
+.btn--light{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn--light:hover{background:var(--soft)}
+.btn--blue{background:var(--blue)}
+.btn--blue:hover{background:var(--blue-d)}
+.btn--glass{background:#fff;color:var(--ink)}
+.btn--glass:hover{background:var(--soft)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;animation:navIn .9s .2s cubic-bezier(.2,.8,.2,1) both;z-index:50;display:flex;align-items:center;gap:26px;height:76px;padding:0 max(var(--pad),calc((100% - 1280px) / 2));background:#fff;border-bottom:1px solid var(--line);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.nav.hide{transform:translateY(-100%)}
+@keyframes navIn{from{opacity:0;translate:0 -30px}to{opacity:1;translate:0 0}}
+.nav__logo img{height:46px;width:auto}
+.nav__links{display:flex;gap:4px;margin:0 auto;font-size:14px;font-weight:500}
+.nav__links a{padding:9px 14px;border-radius:8px;transition:background .3s,color .3s}
+.nav__links a:hover{background:rgba(15,23,42,.06);color:var(--ink)}
+.nav__tel{font-weight:700;color:var(--ink);font-size:14px}
+.nav .btn{height:44px;padding:0 20px}
+.nav__burger{display:none;margin-left:auto;width:44px;height:44px;border-radius:9px;border:0;background:var(--ink);color:#fff;cursor:pointer;font-size:16px}
+.mnav{position:fixed;inset:0;z-index:60;background:#fff;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:var(--pad);clip-path:circle(0% at 100% 0%);visibility:hidden;transition:clip-path .7s cubic-bezier(.7,0,.2,1),visibility 0s .7s}
+.mnav.open{clip-path:circle(150% at 100% 0%);visibility:visible;transition:clip-path .7s cubic-bezier(.7,0,.2,1),visibility 0s}
+.mnav a{font-size:30px;font-weight:700;color:var(--ink);padding:8px 0;border-bottom:1px solid var(--line)}
+.mnav__x{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
+
+/* ---------- HERO (Solar Energy Hero) ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:700px;overflow:hidden;background:#fff}
+.himg{position:absolute;inset:0;clip-path:inset(0 0 0 100%)}
+.himg.on{clip-path:inset(0 0 0 0%)}
+.himg img{width:100%;height:100%;object-fit:cover;transform:scale(1.1)}
+.hero__fog{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(11,18,32,.62) 0%,rgba(11,18,32,.34) 32%,rgba(11,18,32,.12) 52%,rgba(11,18,32,.55) 100%)}
+.hero__copy{position:relative;z-index:4;text-align:center;padding-top:clamp(122px,16vh,168px)}
+.hero__copy .eyebrow{display:inline-block;color:#fff}
+.hero h1{font-size:clamp(40px,6.2vw,92px);font-weight:600;letter-spacing:-.04em;line-height:1.02;color:#fff;margin-top:18px}
+.hero h1 .l{display:block;overflow:hidden;padding:0 .04em .16em;margin-bottom:-.1em}
+.hero h1 .l>span{display:block}
+.hero__sub{max-width:54ch;margin:18px auto 0;color:rgba(255,255,255,.92);font-size:17px;font-weight:500}
+.hero__dock{position:absolute;z-index:5;left:50%;bottom:clamp(40px,8vh,80px);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:18px;width:min(720px,94vw)}
+.pill{position:relative;display:flex;padding:5px;border-radius:12px;background:#fff;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.pill button{position:relative;z-index:1;border:0;background:none;padding:10px 20px;border-radius:9px;cursor:pointer;min-width:118px;text-align:center;transition:color .3s}
+.pill button b{display:block;font-size:15px;font-weight:700;color:var(--ink);transition:color .3s}
+.pill button small{display:block;font-size:11px;color:var(--muted);transition:color .3s}
+.pill button.on b{color:#fff}
+.pill button.on small{color:rgba(255,255,255,.7)}
+.pill__thumb{position:absolute;top:5px;bottom:5px;border-radius:9px;background:var(--ink);transition:left .6s cubic-bezier(.2,.8,.2,1),width .6s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.pill__bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;z-index:2}
+.hero__note{color:#fff;font-size:15px;text-align:center;max-width:52ch;min-height:3em}
+.hero__ctas{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
+/* ---------- brands ---------- */
+.brands{border-bottom:1px solid var(--line);padding:24px 0;overflow:hidden}
+.brands__track{display:flex;width:max-content;animation:mq 30s linear infinite}
+.brands__track span{padding:0 34px;font-size:19px;font-weight:800;letter-spacing:.06em;color:#B6C1D1;transition:color .3s}
+.brands__track span:hover{color:var(--blue)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- offer bento ---------- */
+.ohead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(180px,15vw,230px);gap:14px;margin-top:38px;perspective:1200px}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;color:#fff;will-change:transform;isolation:isolate;background:#cfd8e3}
+.tile img{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;z-index:-2;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(15,23,42,.72) 0%,rgba(15,23,42,0) 58%)}
+.tile__glare{display:none}
+.tile:hover img{transform:scale(1.06)}
+.tile h3{position:absolute;left:18px;bottom:16px;right:60px;font-size:clamp(15px,1.3vw,19px);font-weight:700;line-height:1.25}
+.tile small{position:absolute;left:18px;top:16px;padding:5px 10px;border-radius:7px;background:#fff;color:var(--ink);font-size:11px;font-weight:700}
+.t-full{grid-column:1/-1}
+.tile .go{position:absolute;right:14px;bottom:14px;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;transform:scale(.7) rotate(-45deg);opacity:0;transition:all .45s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .go{opacity:1;transform:scale(1) rotate(0)}
+.tile .go svg{width:15px;height:15px}
+.t-a{grid-column:span 2;grid-row:span 2}
+.t-a h3{font-size:clamp(22px,2.2vw,30px)}
+.t-b{grid-row:span 2}
+.t-w{grid-column:span 2}
+
+/* ---------- VEKA cross-section ---------- */
+.xsec{position:relative;padding:clamp(80px,10vw,130px) 0;overflow:hidden;background:radial-gradient(70% 80% at 50% 58%,#fff 0%,var(--soft) 70%)}
+.xsec__stage{position:relative;height:clamp(520px,58vw,760px);display:grid;place-items:center;margin-top:clamp(30px,4vw,60px)}
+.xsec__word{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:clamp(150px,28vw,430px);font-weight:800;letter-spacing:-.06em;line-height:1;color:#E3E8F0;white-space:nowrap;pointer-events:none}
+.xsec__word span{display:inline-block}
+.xsec__prod{position:relative;z-index:2;display:grid;place-items:center}
+.xmodel{grid-area:1/1;position:relative;opacity:0;visibility:hidden}
+.xmodel.on{opacity:1;visibility:visible}
+.xmodel img{display:block;width:100%;height:100%;filter:drop-shadow(0 40px 40px rgba(15,23,42,.28))}
+.xm-drutex{height:clamp(380px,46vw,600px);aspect-ratio:276/459}
+.xm-veka{height:clamp(400px,44vw,600px);aspect-ratio:480/819}
+.xtabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
+.xtabs button{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:10px 18px;cursor:pointer;text-align:left;transition:background .3s,border-color .3s,color .3s}
+.xtabs button b{display:block;font-size:15px;font-weight:700;color:inherit}
+.xtabs button small{display:block;font-size:12px;color:var(--muted);transition:color .3s}
+.xtabs button:hover{border-color:var(--ink)}
+.xtabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.xtabs button.on small{color:rgba(255,255,255,.7)}
+/* annotation points sit exactly on parts of the profile */
+.pt{position:absolute;left:var(--x);top:var(--y);width:0;height:0;z-index:3}
+.pt__d{position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 6px rgba(29,95,224,.22),0 4px 10px rgba(0,0,0,.2)}
+.pt__d::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid rgba(29,95,224,.5);animation:ping 2s ease-out infinite}
+@keyframes ping{from{transform:scale(.5);opacity:1}to{transform:scale(1.6);opacity:0}}
+.pt__l{position:absolute;top:-.75px;height:1.5px;width:var(--len,120px);background:var(--ink)}
+.pt__t{position:absolute;top:0;transform:translateY(-50%);white-space:nowrap;background:#fff;padding:10px 14px;border-radius:10px;box-shadow:0 14px 30px rgba(15,23,42,.1);border:1px solid var(--line)}
+.pt__t b{display:block;font-size:clamp(17px,1.6vw,22px);font-weight:700;color:var(--ink);line-height:1.15}
+.pt__t small{font-size:12px;color:var(--muted)}
+.pt--l .pt__l{right:0;transform-origin:right}
+.pt--l .pt__t{right:calc(var(--len,120px) + 6px)}
+.pt--r .pt__l{left:0;transform-origin:left}
+.pt--r .pt__t{left:calc(var(--len,120px) + 6px)}
+.dimline{position:absolute;left:2%;width:34%;top:calc(100% + 18px);height:10px;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);z-index:3}
+.dimline::before{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--ink)}
+.dimline span{position:absolute;left:50%;top:16px;transform:translateX(-50%);white-space:nowrap;font-weight:700;color:var(--ink);font-size:15px}
+.dimline small{display:block;font-size:11px;font-weight:500;color:var(--muted);text-align:center}
+
+/* ---------- compare ---------- */
+.ctabs{position:relative;display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#fff;border:1px solid var(--line);margin-bottom:26px}
+.ctabs button{position:relative;z-index:1;border:0;background:none;padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:color .3s}
+.ctabs button.on{color:#fff}
+.ctabs__pill{position:absolute;top:4px;bottom:4px;border-radius:999px;background:var(--ink);transition:left .5s cubic-bezier(.2,.8,.2,1),width .5s cubic-bezier(.2,.8,.2,1)}
+.cmp__grid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;margin-top:24px}
+.ccard{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:start;padding:24px;border-radius:var(--r);background:#fff;border:1px solid var(--line);transition:box-shadow .4s,transform .4s}
+.ccard:hover{box-shadow:0 24px 50px rgba(15,23,42,.08);transform:translateY(-4px)}
+.ccard__img{width:150px;height:200px;background:var(--soft);border-radius:14px;overflow:hidden}
+.ccard__img img{display:block;width:100%;height:100%;object-fit:contain;padding:12px;mix-blend-mode:multiply}
+.ccard small{font-size:12px;font-weight:700;color:var(--blue)}
+.ccard h3{font-size:21px;font-weight:700;color:var(--ink);margin:4px 0 8px}
+.ccard p{font-size:14px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{padding:6px 11px;border-radius:999px;background:var(--blue-l);color:var(--blue-d);font-size:12px;font-weight:600}
+.ccard a{display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--ink)}
+.czy{align-self:center;width:56px;height:56px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;box-shadow:0 0 0 8px var(--soft),0 0 0 9px var(--line)}
+.advice{display:flex;gap:18px;margin-top:18px;padding:20px 24px;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
+.advice b{flex:0 0 auto;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);padding-top:2px}
+.advice p{font-size:14px}
+.cpanel{display:none}
+.cpanel.on{display:block}
+
+/* ---------- curved strip (Custom Spaces) ---------- */
+.curve{position:relative;height:clamp(250px,30vw,390px);margin:50px 0 40px;perspective:1100px;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.curve img,.hcard img,.tile img{-webkit-user-drag:none;user-select:none}
+.curve__item{position:absolute;top:0;left:50%;height:100%;width:clamp(210px,21vw,300px);margin-left:calc(clamp(210px,21vw,300px) / -2);border-radius:18px;overflow:hidden;backface-visibility:hidden;will-change:transform;box-shadow:0 22px 44px rgba(15,23,42,.14)}
+.curve__item img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.curve__item span{position:absolute;left:10px;bottom:10px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.92);font-size:12px;font-weight:700;color:var(--ink)}
+
+/* ---------- moving rows ---------- */
+.rows{overflow:hidden;padding-bottom:10px}
+.hrow{display:flex;gap:14px;width:max-content;will-change:transform}
+.hrow + .hrow{margin-top:14px}
+.hcard{position:relative;flex:0 0 auto;width:clamp(240px,26vw,420px);aspect-ratio:3/2;border-radius:var(--r);overflow:hidden}
+.hcard img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.hcard:hover img{transform:scale(1.07)}
+.hcard span{position:absolute;left:12px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.92);font-size:12px;font-weight:700;color:var(--ink)}
+
+/* ---------- TrustFlow "why" ---------- */
+.trust{padding-top:clamp(80px,10vw,130px);text-align:center}
+.trust h2{font-weight:600;font-size:clamp(44px,6vw,92px);line-height:1;letter-spacing:-.04em;color:var(--ink);margin-top:14px}
+.trust__media{position:relative;margin-top:50px;height:clamp(420px,58vw,740px);overflow:hidden}
+.trust__media img{width:100%;height:118%;object-fit:cover;object-position:50% 55%}
+.trust__media::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0) 24%)}
+.tcard{position:relative;z-index:2;max-width:1120px;margin:-220px auto 0;background:#fff;border-radius:24px 24px 0 0;padding:clamp(26px,4vw,48px) clamp(22px,4vw,56px) 0;text-align:left;box-shadow:0 -24px 60px rgba(15,23,42,.08)}
+.tcard__top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,60px);align-items:end;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.tcard h3{font-weight:600;font-size:clamp(24px,2.4vw,34px);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin-top:10px}
+.tcard__top p{color:var(--muted);font-size:15px}
+.tcard__stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.tstat{padding:22px 18px 28px;border-right:1px solid var(--line);position:relative}
+.tstat:last-child{border-right:0}
+.tstat::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.tstat.on::before,.tstat:hover::before{transform:scaleX(1)}
+.tstat small{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.tstat b{display:block;font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-.03em;color:var(--ink);margin-top:6px}
+
+/* ---------- process ---------- */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px}
+.steps__line{position:absolute;left:32px;right:32px;top:32px;height:2px;background:var(--line)}
+.steps__line i{position:absolute;inset:0;background:var(--blue);transform:scaleX(0);transform-origin:left}
+.step__ic{position:relative;z-index:1;width:64px;height:64px;border-radius:18px;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--blue);font-weight:800;font-size:18px;transition:background .4s,color .4s,border-color .4s}
+.step.on .step__ic{background:var(--blue);color:#fff;border-color:var(--blue)}
+.step h3{font-size:19px;font-weight:700;color:var(--ink);margin:22px 0 8px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* ---------- CTA ---------- */
+.cta{position:relative;margin:0 var(--pad);border-radius:28px;overflow:hidden;color:#fff;padding:clamp(40px,7vw,96px) clamp(28px,6vw,80px);background:var(--blue);isolation:isolate;text-align:center}
+.cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:.28;mix-blend-mode:luminosity}
+.cta .eyebrow{color:#BFD5FF}
+.cta h2{font-size:clamp(34px,4.4vw,64px);font-weight:600;letter-spacing:-.035em;line-height:1.05;margin:14px auto 16px;max-width:18ch}
+.cta .dim{color:inherit}
+.cta p{max-width:52ch;margin:0 auto;color:rgba(255,255,255,.88)}
+.cta .btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+.cta .btn{background:#fff;color:var(--ink)}
+.cta .btn:hover{background:var(--soft)}
+
+/* ---------- contact ---------- */
+.contact{display:grid;grid-template-columns:.85fr 1.35fr;gap:clamp(30px,5vw,70px);align-items:stretch}
+.contact>div{display:flex;flex-direction:column}
+.clist{flex:1;display:flex;flex-direction:column;gap:10px;margin-top:26px}
+.clist>*{flex:1}
+.clist a,.clist div{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;border-radius:14px;border:1px solid var(--line);transition:border-color .3s,background .3s,transform .3s}
+.clist a:hover{border-color:var(--blue);background:var(--blue-l);transform:translateX(4px)}
+.clist small{font-size:12px;color:var(--muted);font-weight:600}
+.clist b{font-size:17px;color:var(--ink)}
+.form{padding:clamp(26px,4vw,52px);border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 70px rgba(15,23,42,.1)}
+.form h3{font-size:clamp(24px,2.4vw,32px);font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.form > p{font-size:15px;color:var(--muted);margin:6px 0 26px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.fld label{font-size:13px;font-weight:700;color:var(--ink)}
+.form input,.form textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;background:var(--soft);height:56px;padding:0 18px;font-size:16px;outline:none;transition:border-color .3s,box-shadow .3s,background .3s}
+.form textarea{height:auto;min-height:140px;padding:16px 18px;resize:vertical}
+.form input:focus,.form textarea:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(29,95,224,.12)}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0;pointer-events:none;width:auto;height:auto}
+.opts span{display:inline-block;padding:10px 16px;border-radius:9px;border:1.5px solid var(--line);font-size:14px;font-weight:600;transition:all .25s}
+.opts input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+.form .btn{width:100%;height:56px;font-size:15px;margin-top:6px}
+.form__note{margin-top:12px;font-size:12px;color:var(--muted);text-align:center}
+.form__ok{display:none;margin-top:12px;padding:12px 14px;border-radius:12px;background:#E8F7EE;color:#166534;font-weight:600;text-align:center}
+.form.sent .form__ok{display:block}
+
+.footer{background:#0B1220;color:#fff;padding:64px 0 28px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:28px}
+.fgrid img{height:52px;margin-bottom:16px;background:#fff;padding:6px 10px;border-radius:10px}
+.fgrid p{color:rgba(255,255,255,.7);max-width:34ch}
+.fgrid h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:14px}
+.fgrid ul{list-style:none;display:grid;gap:9px;color:rgba(255,255,255,.7)}
+.fgrid a:hover{color:#fff}
+.fbot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.55)}
+
+.js .rv{opacity:0;transform:translateY(34px)}
+
+@media (max-width:1100px){
+  .nav__links,.nav__tel{display:none}
+  .nav .btn{margin-left:auto}
+  .hero__side{display:none}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .t-b{grid-row:span 1}
+  .cmp__grid{grid-template-columns:1fr}
+  .czy{margin:0 auto}
+  .tcard{margin:-140px 16px 0}
+  .tcard__top,.contact{grid-template-columns:1fr}
+  .tcard__stats{grid-template-columns:1fr 1fr}
+  .tstat:nth-child(2){border-right:0}
+  .steps{grid-template-columns:1fr 1fr;row-gap:40px}
+  .steps__line{display:none}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .nav .btn{display:none}
+  .nav__burger{display:block}
+  .pill button{min-width:0;padding:9px 12px}
+  .pill button small{display:none}
+  .hero__note{display:none}
+  .bento{grid-template-columns:1fr;grid-auto-rows:200px}
+  .t-a,.t-w{grid-column:span 1;grid-row:span 1}
+  .ccard{grid-template-columns:110px 1fr;padding:18px}
+  .ccard__img{width:110px;height:150px}
+  .pt,.dimline{display:none}
+  .xsec__word{font-size:42vw}
+  .steps,.frow,.fgrid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.brands__track{animation:none}}
+</style>
+</head>
+<body class="no-js">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="progress"><i id="prog"></i></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo" aria-label="SOREX — strona główna"><img src="img/logo-sorex.png" alt="SOREX"></a>
+  <nav class="nav__links">
+    <a href="#oferta">Oferta</a>
+    <a href="#przekroj">Okna VEKA</a>
+    <a href="#inspiracje">Inspiracje</a>
+    <a href="#o-firmie">O firmie</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <a href="#kontakt" class="btn mag">Bezpłatna wycena</a>
+  <button class="nav__burger" aria-label="Menu">☰</button>
+</header>
+
+<div class="mnav">
+  <button class="mnav__x" aria-label="Zamknij">✕</button>
+  <a href="#oferta">Oferta</a>
+  <a href="#przekroj">Okna VEKA</a>
+  <a href="#inspiracje">Inspiracje</a>
+  <a href="#o-firmie">O firmie</a>
+  <a href="#kontakt">Kontakt</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="himg on"><img src="img/h1.jpg" alt="Nowoczesny dom z dużymi przeszkleniami" style="object-position:50% 70%"></div>
+    <div class="himg"><img src="img/markiza-1.jpg" alt="Markiza tarasowa SOREX" style="object-position:50% 50%"></div>
+    <div class="himg"><img src="img/h3.jpg" alt="Taras z zadaszeniem" style="object-position:50% 60%"></div>
+    <div class="himg"><img src="img/h4.jpg" alt="Dom z bramą garażową" style="object-position:50% 60%"></div>
+    <div class="hero__fog"></div>
+    <div class="hero__copy wrap">
+      <span class="eyebrow">SOREX · Wrocław · od 1997</span>
+      <h1><span class="l"><span>Energooszczędne okna</span></span><span class="l"><span>dla <span class="dim">ciepłych</span> domów</span></span></h1>
+    </div>
+    <div class="hero__dock">
+      <div class="pill" role="tablist" aria-label="Wybierz produkt">
+        <span class="pill__thumb"><i class="pill__bar"></i></span>
+        <button class="on"><b>Okna</b><small>PCV VEKA</small></button>
+        <button><b>Markizy</b><small>tarasowe</small></button>
+        <button><b>Pergole</b><small>tarasowe</small></button>
+        <button><b>Bramy</b><small>garażowe</small></button>
+      </div>
+      <p class="hero__note" id="hnote">Profile okienne VEKA klasy A — rewelacyjne właściwości termoizolacyjne, okna energooszczędne.</p>
+      <div class="hero__ctas"><a href="#kontakt" class="btn btn--blue mag">Umów bezpłatny pomiar </a><a href="#oferta" class="btn btn--glass mag">Zobacz ofertę</a></div>
+    </div>
+  </section>
+
+  <div class="brands" aria-label="Partnerzy"><div class="brands__track">
+    <span>VEKA</span><span>DRUTEX</span><span>REHAU</span><span>PORTA</span><span>WINKHAUS</span><span>ROTO</span><span>PRESS-GLAS</span><span>ALUPROF</span><span>WIŚNIOWSKI</span>
+    <span>VEKA</span><span>DRUTEX</span><span>REHAU</span><span>PORTA</span><span>WINKHAUS</span><span>ROTO</span><span>PRESS-GLAS</span><span>ALUPROF</span><span>WIŚNIOWSKI</span>
+  </div></div>
+
+  <!-- OFFER -->
+  <section class="sec" id="oferta">
+    <div class="wrap">
+      <div class="ohead">
+        <div><span class="eyebrow">Nasza oferta</span><h2 class="h2">Wszystko dla domu — <span class="dim">od okien po pergole</span></h2></div>
+        <a href="#kontakt" class="btn btn--light mag">Zapytaj o wycenę </a>
+      </div>
+      <div class="bento">
+        <a href="#przekroj" class="tile t-a"><img src="img/o-okna.jpg" alt=""><small>Bestseller</small><h3>Okna PCV VEKA</h3><span class="go"><svg><use href="#arr"/></svg></span></a>
+        <a href="#kontakt" class="tile t-b"><img src="img/o-drzwi.jpg" alt=""><h3>Drzwi wejściowe</h3><span class="go"><svg><use href="#arr"/></svg></span></a>
+        <a href="#kontakt" class="tile"><img src="img/rolety.jpg" alt=""><h3>Rolety zewnętrzne aluminiowe</h3><span class="go"><svg><use href="#arr"/></svg></span></a>
+        <a href="#kontakt" class="tile"><img src="img/markiza-1.jpg" alt=""><h3>Markizy tarasowe</h3><span class="go"><svg><use href="#arr"/></svg></span></a>
+        <a href="#kontakt" class="tile t-w"><img src="img/o-pergole.jpg" alt=""><small>Promocja</small><h3>Pergole i zadaszenia tarasów</h3><span class="go"><svg><use href="#arr"/></svg></span></a>
+        <a href="#kontakt" class="tile"><img src="img/o-rolety.jpg" alt=""><h3>Żaluzje fasadowe i roletki Dzień-Noc</h3><span class="go"><svg><use href="#arr"/></svg></span></a>
+        <a href="#kontakt" class="tile"><img src="img/h4.jpg" alt="" style="object-position:30% 60%"><h3>Bramy garażowe</h3><span class="go"><svg><use href="#arr"/></svg></span></a>
+        <a href="#kontakt" class="tile t-full"><img src="img/o-alu.jpg" style="object-position:50% 60%" alt=""><h3>Stolarka aluminiowa ALUPROF</h3><span class="go"><svg><use href="#arr"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEKA CROSS-SECTION -->
+  <section class="xsec" id="przekroj">
+    <div class="wrap center"><span class="eyebrow">Okno z bliska</span><h2 class="h2">Zobacz, co jest w środku okna</h2>
+      <div class="xtabs" id="xtabs">
+        <button class="on"><b>Okna DRUTEX</b><small>PCV, klasa A</small></button>
+        <button><b>VEKA Softline 82</b><small>3 uszczelki, klasa A</small></button>
+      </div>
+    </div>
+    <div class="xsec__stage" id="xstage">
+      <div class="xsec__word" id="xword" aria-hidden="true"><span>P</span><span>C</span><span>V</span></div>
+      <div class="xsec__prod" id="xprod">
+        <div class="xmodel xm-drutex on" data-word="PCV"><img src="img/profil-drutex.png" alt="Przekrój okna DRUTEX">
+          <div class="pt pt--r" style="--x:42%;--y:24%"><i class="pt__l"></i><span class="pt__t"><b>3 szyby</b><small>pakiet energooszczędny</small></span><i class="pt__d"></i></div>
+          <div class="pt pt--l" style="--x:8%;--y:58%"><i class="pt__l"></i><span class="pt__t"><b>Uszczelki</b><small>szczelność na wiatr i wodę</small></span><i class="pt__d"></i></div>
+          <div class="pt pt--l" style="--x:5%;--y:74%"><i class="pt__l"></i><span class="pt__t"><b>Komory profilu</b><small>izolacja termiczna</small></span><i class="pt__d"></i></div>
+          <div class="pt pt--l" style="--x:13%;--y:89%"><i class="pt__l"></i><span class="pt__t"><b>Stalowe wzmocnienie</b><small>w ramie i skrzydle</small></span><i class="pt__d"></i></div>
+        </div>
+        <div class="xmodel xm-veka" data-word="82"><img src="img/veka-82md.png" alt="Przekrój profilu VEKA Softline 82 MD">
+          <div class="pt pt--l" style="--x:23%;--y:29%"><i class="pt__l"></i><span class="pt__t"><b>3 szyby</b><small>pakiet energooszczędny</small></span><i class="pt__d"></i></div>
+          <div class="pt pt--l" style="--x:20%;--y:64%"><i class="pt__l"></i><span class="pt__t"><b>Ciepła ramka</b><small>mniej strat na krawędzi szyby</small></span><i class="pt__d"></i></div>
+          <div class="pt pt--r" style="--x:63%;--y:79%"><i class="pt__l"></i><span class="pt__t"><b>Uszczelka środkowa</b><small>3 poziomy uszczelnienia</small></span><i class="pt__d"></i></div>
+          <div class="pt pt--l" style="--x:48%;--y:90%"><i class="pt__l"></i><span class="pt__t"><b>Stalowe wzmocnienie</b><small>w ramie i skrzydle</small></span><i class="pt__d"></i></div>
+          <div class="dimline" style="left:33%;width:40%"><span>82 mm<small>głębokość profilu</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="sec sec--soft" id="warianty">
+    <div class="wrap">
+      <div class="ctabs" id="ctabs"><span class="ctabs__pill"></span><button class="on">Alphaline 90 / Softline 82</button><button>VEKA / Drutex</button></div>
+      <div><span class="eyebrow">Wybierz swój wariant</span></div>
+      <div class="cpanel on">
+        <h2 class="h2">Alphaline 90 <span class="dim">czy</span> Softline 82?</h2>
+        <p class="lead">Oba systemy to profile VEKA klasy A o rewelacyjnych właściwościach termoizolacyjnych. Różnią się głębokością profilu — 90 mm i 82 mm.</p>
+        <div class="cmp__grid">
+          <article class="ccard"><div class="ccard__img"><img src="img/profil-drutex.png" alt="Profil VEKA Alphaline 90"></div><div><small>Maksymalna energooszczędność</small><h3>VEKA Alphaline 90</h3><p>Maksymalna energooszczędność i unikatowe bezpieczeństwo. Okna w systemie Alphaline 90 osiągają współczynnik Uw nawet 0,9 W/m²K.</p><div class="chips"><span>90 mm</span><span>Klasa A</span><span>Uw do 0,9</span></div><a href="#kontakt">Zapytaj o wycenę →</a></div></article>
+          <span class="czy">czy</span>
+          <article class="ccard"><div class="ccard__img"><img src="img/veka-82md.png" alt="Profil VEKA Softline 82"></div><div><small>Nowoczesność i komfort</small><h3>VEKA Softline 82</h3><p>Nowoczesne okna w systemie VEKA Softline 82 mm — ciepło, niskie straty energii i bogate wyposażenie.</p><div class="chips"><span>82 mm</span><span>Klasa A</span><span>3 warianty wizualne</span></div><a href="#kontakt">Zapytaj o wycenę →</a></div></article>
+        </div>
+      </div>
+      <div class="cpanel">
+        <h2 class="h2">Okna VEKA <span class="dim">czy</span> Drutex?</h2>
+        <p class="lead">W ofercie SOREX znajdziesz profile VEKA oraz stolarkę PCV Drutex — największego producenta stolarki okienno-drzwiowej w Europie.</p>
+        <div class="cmp__grid">
+          <article class="ccard"><div class="ccard__img"><img src="img/profil-1.jpg" alt="Profil VEKA"></div><div><small>Profile klasy A</small><h3>Okna PCV VEKA</h3><p>Profile okienne VEKA klasy A. Rewelacyjne właściwości termoizolacyjne, okna energooszczędne.</p><div class="chips"><span>Alphaline 90</span><span>Softline 82</span><span>Perfectline</span></div><a href="#kontakt">Zapytaj o wycenę →</a></div></article>
+          <span class="czy">czy</span>
+          <article class="ccard"><div class="ccard__img"><img src="img/profil-energy.png" alt="Okno Drutex"></div><div><small>Lider produkcji stolarki PCV</small><h3>Okna Drutex</h3><p>Ponad 4000 partnerów handlowych na świecie, liczne certyfikaty, atesty i dopuszczenia techniczne.</p><div class="chips"><span>PVC</span><span>Drewno</span><span>Aluminium</span></div><a href="#kontakt">Zapytaj o wycenę →</a></div></article>
+        </div>
+      </div>
+      <div class="advice rv"><b>Nasza rada</b><p>Jeżeli zależy Ci na maksymalnej energooszczędności, wybierz VEKA Alphaline 90. Pomiar i doradztwo przy zamówieniu są bezpłatne.</p></div>
+    </div>
+  </section>
+
+  <!-- INSPIRATIONS: curved strip + moving rows -->
+  <section class="sec" id="inspiracje" style="padding-bottom:clamp(50px,6vw,80px)">
+    <div class="wrap center">
+      <span class="eyebrow">Inspiracje</span>
+      <h2 class="h2">Zobacz, jak to może <span class="dim">wyglądać u Ciebie</span></h2>
+      <p class="lead">Duże przeszklenia, ciepłe okna, zadaszone tarasy. Sprzedaliśmy i zamontowaliśmy już ponad 100 tys. okien, drzwi, bram, markiz i pergoli.</p>
+    </div>
+    <div class="curve" id="curve">
+      <figure class="curve__item"><img src="img/i1.jpg" alt=""><span>Dom z dużymi oknami</span></figure>
+      <figure class="curve__item"><img src="img/o-okna.jpg" alt=""><span>Panoramiczne przeszklenia</span></figure>
+      <figure class="curve__item"><img src="img/i2.jpg" alt=""><span>Nowoczesna stolarka</span></figure>
+      <figure class="curve__item"><img src="img/h3.jpg" alt=""><span>Zadaszony taras</span></figure>
+      <figure class="curve__item"><img src="img/i7.jpg" alt=""><span>Okno w kuchni</span></figure>
+      <figure class="curve__item"><img src="img/i3.jpg" alt=""><span>Dom w lesie</span></figure>
+      <figure class="curve__item"><img src="img/i8.jpg" alt=""><span>Drzwi tarasowe</span></figure>
+      <figure class="curve__item"><img src="img/i4.jpg" alt=""><span>Elewacja z kamienia</span></figure>
+      <figure class="curve__item"><img src="img/o-pergole.jpg" alt=""><span>Pergola</span></figure>
+      <figure class="curve__item"><img src="img/i6.jpg" alt=""><span>Wyjście na taras</span></figure>
+    </div>
+    <div class="rows">
+      <div class="hrow" id="row1">
+        <figure class="hcard"><img loading="lazy" src="img/i5.jpg" alt=""><span>Okna PCV</span></figure>
+        <figure class="hcard"><img loading="lazy" src="img/markiza-1.jpg" alt=""><span>Markiza tarasowa — realizacja SOREX</span></figure>
+        <figure class="hcard"><img loading="lazy" src="img/i9.jpg" alt=""><span>Duże przeszklenia</span></figure>
+        <figure class="hcard"><img loading="lazy" src="img/h2.jpg" alt=""><span>Okna PCV</span></figure>
+        <figure class="hcard"><img loading="lazy" src="img/o-alu.jpg" alt=""><span>Stolarka aluminiowa</span></figure>
+      </div>
+      <div class="hrow" id="row2">
+        <figure class="hcard"><img loading="lazy" src="img/h1.jpg" alt=""><span>Dom parterowy</span></figure>
+        <figure class="hcard"><img loading="lazy" src="img/o-rolety.jpg" alt=""><span>Rolety zewnętrzne</span></figure>
+        <figure class="hcard"><img loading="lazy" src="img/pergola-5.jpg" alt=""><span>Pergola — realizacja SOREX</span></figure>
+        <figure class="hcard"><img loading="lazy" src="img/why.jpg" alt=""><span>Okna i drzwi tarasowe</span></figure>
+        <figure class="hcard"><img loading="lazy" src="img/i1.jpg" alt=""><span>Elewacja z przeszkleniami</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY (TrustFlow) -->
+  <section class="trust" id="o-firmie">
+    <div class="wrap">
+      <span class="eyebrow">Dlaczego my?</span>
+      <h2>Ponad 20 lat<br><span class="dim">ciepłych domów.</span></h2>
+      <p class="lead" style="margin:18px auto 26px">Dysponujemy profesjonalnymi systemami montażu łącznie z doradztwem projektowym i technicznym.</p>
+      <a href="#kontakt" class="btn mag">Porozmawiajmy </a>
+    </div>
+    <div class="trust__media"><img loading="lazy" src="img/why.jpg" alt="Dom z dużymi przeszkleniami"></div>
+    <div class="tcard rv">
+      <div class="tcard__top">
+        <div><span class="eyebrow">Lider Dolnego Śląska</span><h3>Jesteśmy liderem w sprzedaży i montażu systemów okiennych.</h3></div>
+        <p>Od 1997 roku specjalizujemy się w sprzedaży stolarki okiennej i drzwiowej z PVC, aluminium i drewna. Korzystamy wyłącznie z materiałów światowych liderów — Veka, Porta, Winkhaus, Roto, Press-Glas dają gwarancję jakości na najwyższym poziomie.</p>
+      </div>
+      <div class="tcard__stats">
+        <div class="tstat on"><small>Na rynku od</small><b>1997</b></div>
+        <div class="tstat"><small>Doświadczenie</small><b>20+ lat</b></div>
+        <div class="tstat"><small>Zamontowanych produktów</small><b>100 tys.+</b></div>
+        <div class="tstat"><small>Pomiar i doradztwo</small><b>0 zł</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="sec" id="jak-dzialamy">
+    <div class="wrap">
+      <div class="center"><span class="eyebrow">Jak działamy</span><h2 class="h2">Od pierwszego telefonu <span class="dim">do montażu</span></h2><p class="lead">Jesteśmy otwarci na Państwa sugestie odnośnie wyboru towaru i jego montażu.</p></div>
+      <div class="steps">
+        <div class="steps__line"><i></i></div>
+        <div class="step"><div class="step__ic">01</div><h3>Kontakt z firmą</h3><p>Zadzwoń lub napisz — pełne dane teleadresowe znajdziesz poniżej.</p></div>
+        <div class="step"><div class="step__ic">02</div><h3>Pomiary i transport</h3><p>W przypadku zamówienia towarów pomiar i doradztwo są bezpłatne.</p></div>
+        <div class="step"><div class="step__ic">03</div><h3>Przygotowanie do umowy</h3><p>Umowa przekazywana jest klientowi do akceptacji i ewentualnych zmian.</p></div>
+        <div class="step"><div class="step__ic">04</div><h3>Profesjonalny montaż</h3><p>Montaż łącznie z doradztwem projektowym i technicznym.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta rv" id="cta">
+    <img loading="lazy" src="img/i5.jpg" alt="">
+    <span class="eyebrow">Promocja na pergole tarasowe</span>
+    <h2>Montaż pergoli <span class="dim">za 1 zł</span> — zadzwoń i zapytaj</h2>
+    <p>W przypadku przedpłaty 100% wartości pergoli tarasowej — montaż za 1 zł! Pomiar i doradztwo przy zamówieniu zawsze bezpłatne.</p>
+    <div class="btns"><a href="tel:+48602446393" class="btn mag">602 446 393</a><a href="#kontakt" class="btn btn--glass mag">Wyślij zapytanie</a></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="kontakt">
+    <div class="wrap contact">
+      <div>
+        <span class="eyebrow">Kontakt</span>
+        <h2 class="h2">Kontakt z firmą <span class="dim">SOREX</span></h2>
+        <p class="lead">Zadzwoń i umów się na pomiar albo zostaw kontakt — oddzwonimy i przygotujemy wycenę.</p>
+        <div class="clist">
+          <a href="tel:+48602446393"><small>Telefon</small><b>+48 602 446 393</b></a>
+          <a href="tel:+48717278504"><small>Biuro</small><b>+48 71 727 85 04</b></a>
+          <a href="mailto:wyceny@sorex.pl"><small>Wyceny</small><b>wyceny@sorex.pl</b></a>
+          <a href="mailto:info@sorex.pl"><small>Informacje</small><b>info@sorex.pl</b></a>
+          <div><small>Adres</small><b>al. Lipowa 24A, 53-124 Wrocław</b></div>
+        </div>
+      </div>
+      <form class="form rv" id="form" novalidate>
+        <h3>Uzyskaj bezpłatną wycenę</h3>
+        <p>Odpowiadamy najszybciej, jak to możliwe.</p>
+        <div class="fld"><label>Czego dotyczy zapytanie?</label>
+          <div class="opts">
+            <label><input type="checkbox" name="z" checked><span>Okna</span></label>
+            <label><input type="checkbox" name="z"><span>Drzwi</span></label>
+            <label><input type="checkbox" name="z"><span>Markizy</span></label>
+            <label><input type="checkbox" name="z"><span>Pergole</span></label>
+            <label><input type="checkbox" name="z"><span>Rolety</span></label>
+            <label><input type="checkbox" name="z"><span>Bramy</span></label>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="fld"><label for="f1">Imię i nazwisko</label><input id="f1" type="text" placeholder="Jan Kowalski"></div>
+          <div class="fld"><label for="f2">Telefon</label><input id="f2" type="tel" placeholder="600 000 000"></div>
+        </div>
+        <div class="frow">
+          <div class="fld"><label for="f3">E-mail</label><input id="f3" type="email" placeholder="jan@kowalski.pl"></div>
+          <div class="fld"><label for="f4">Miejscowość</label><input id="f4" type="text" placeholder="Wrocław"></div>
+        </div>
+        <div class="fld"><label for="f5">Wiadomość</label><textarea id="f5" placeholder="Ilość okien, wymiary, termin montażu…"></textarea></div>
+        <button type="submit" class="btn btn--blue">Wyślij zapytanie</button>
+        <p class="form__note">W przypadku zamówienia pomiar i doradztwo są bezpłatne.</p>
+        <div class="form__ok">Dziękujemy! Skontaktujemy się z Tobą wkrótce.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="fgrid">
+        <div><img src="img/logo.png" alt="SOREX"><p>SOREX najlepszy wybór! Sprzedaż i montaż stolarki okiennej i drzwiowej, markiz i pergoli tarasowych od 1997 roku.</p></div>
+        <div><h4>Oferta</h4><ul><li><a href="#przekroj">Okna PCV VEKA</a></li><li><a href="#oferta">Markizy tarasowe</a></li><li><a href="#oferta">Pergole tarasowe</a></li><li><a href="#oferta">Bramy garażowe</a></li></ul></div>
+        <div><h4>Firma</h4><ul><li><a href="#o-firmie">O firmie</a></li><li><a href="#inspiracje">Inspiracje</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+        <div><h4>SOREX PPHU</h4><ul><li>al. Lipowa 24A, 53-124 Wrocław</li><li><a href="tel:+48602446393">+48 602 446 393</a></li><li><a href="mailto:info@sorex.pl">info@sorex.pl</a></li></ul></div>
+      </div>
+      <div class="fbot"><span>sorex.pl © 2026</span><span>Polityka prywatności</span></div>
+    </div>
+  </footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var body = document.body, reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasG = !!(window.gsap && window.ScrollTrigger), fine = window.matchMedia('(pointer:fine)').matches;
+
+  var mnav = document.querySelector('.mnav');
+  document.querySelector('.nav__burger').addEventListener('click', function(){ mnav.classList.add('open'); });
+  mnav.addEventListener('click', function(e){ if (e.target.closest('a') || e.target.closest('.mnav__x')) mnav.classList.remove('open'); });
+  var form = document.getElementById('form');
+  form.addEventListener('submit', function(e){ e.preventDefault(); form.classList.add('sent'); });
+
+  /* compare tabs */
+  var ctabs = document.querySelectorAll('#ctabs button'), cpill = document.querySelector('.ctabs__pill'), panels = document.querySelectorAll('.cpanel');
+  function pillTo(b){ cpill.style.left = b.offsetLeft + 'px'; cpill.style.width = b.offsetWidth + 'px'; }
+  ctabs.forEach(function(b, i){ b.addEventListener('click', function(){
+    ctabs.forEach(function(x){ x.classList.toggle('on', x === b); }); pillTo(b);
+    panels.forEach(function(p, k){ p.classList.toggle('on', k === i); });
+    if (hasG && !reduce) { var p = panels[i]; gsap.from(p.querySelectorAll('.ccard'), { x: function(k){ return k ? 60 : -60; }, opacity: 0, duration: .7, ease: 'power3.out' }); gsap.from(p.querySelector('.czy'), { scale: 0, rotate: -180, duration: .7, ease: 'back.out(2)' }); }
+  }); });
+  pillTo(ctabs[0]); window.addEventListener('resize', function(){ pillTo(document.querySelector('#ctabs button.on')); });
+
+  /* HERO: glass pill switches scenes (clip wipe + Ken Burns) */
+  var himgs = document.querySelectorAll('.himg'), pbtns = document.querySelectorAll('.pill button'), thumb = document.querySelector('.pill__thumb'), bar = document.querySelector('.pill__bar'), hnote = document.getElementById('hnote');
+  var notes = [
+    'Profile okienne VEKA klasy A — rewelacyjne właściwości termoizolacyjne, okna energooszczędne.',
+    'Markizy tarasowe i balkonowe — osłona przed słońcem i deszczem, z impregnowanych tkanin.',
+    'Pergole tarasowe aluminiowe z ruchomym dachem, sterowanym elektrycznie.',
+    'Bramy garażowe segmentowe i roletowe — automatyczne, ocieplane, z montażem.'
+  ];
+  var cur = 0, DUR = 6, fill = null;
+  function moveThumb(b){ thumb.style.left = b.offsetLeft + 'px'; thumb.style.width = b.offsetWidth + 'px'; }
+  function scene(n){
+    var prev = cur; cur = (n + himgs.length) % himgs.length;
+    pbtns.forEach(function(b, k){ b.classList.toggle('on', k === cur); }); moveThumb(pbtns[cur]);
+    if (!hasG || reduce) { himgs.forEach(function(im, k){ im.classList.toggle('on', k === cur); }); hnote.textContent = notes[cur]; return; }
+    if (prev !== cur) {
+      var a = himgs[cur], b = himgs[prev];
+      gsap.set(a, { zIndex: 2 }); gsap.set(b, { zIndex: 1 }); a.classList.add('on');
+      gsap.fromTo(a, { clipPath: 'inset(0 0 0 100%)' }, { clipPath: 'inset(0 0 0 0%)', duration: 1.25, ease: 'expo.inOut', onComplete: function(){ b.classList.remove('on'); } });
+      gsap.to(b.querySelector('img'), { xPercent: -8, duration: 1.25, ease: 'expo.inOut' });
+      gsap.fromTo(hnote, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: .6, delay: .3, onStart: function(){ hnote.textContent = notes[cur]; } });
+    }
+    gsap.fromTo(himgs[cur].querySelector('img'), { scale: 1.22, xPercent: 4 }, { scale: 1.04, xPercent: 0, duration: DUR + 1.3, ease: 'none' });
+    if (fill) fill.kill();
+    fill = gsap.fromTo(bar, { scaleX: 0 }, { scaleX: 1, duration: DUR, ease: 'none', onComplete: function(){ scene(cur + 1); } });
+  }
+  pbtns.forEach(function(b, i){ b.addEventListener('click', function(){ scene(i); }); });
+  moveThumb(pbtns[0]); window.addEventListener('resize', function(){ moveThumb(pbtns[cur]); });
+
+  /* CURVED strip (Custom Spaces) */
+  var curve = document.getElementById('curve'), items = [].slice.call(curve.querySelectorAll('.curve__item'));
+  var offset = 0, speed = reduce ? 0 : .4, boost = 0, drag = null;
+  function layout(){
+    var W = curve.clientWidth, step = items[0].offsetWidth + 14, total = step * items.length;
+    items.forEach(function(it, i){
+      var x = ((i * step - offset) % total + total) % total - total / 2 + step / 2;
+      var d = Math.max(-1.6, Math.min(1.6, x / (W / 2)));
+      it.style.transform = 'translateX(' + x + 'px) translateZ(' + Math.abs(d) * 160 + 'px) rotateY(' + (-d * 32) + 'deg)';
+      it.style.zIndex = Math.round(100 - Math.abs(d) * 10);
+    });
+  }
+  (function tick(){ offset += speed + boost; boost *= .92; if (!drag) layout(); requestAnimationFrame(tick); })();
+  window.addEventListener('resize', layout);
+  curve.addEventListener('pointerdown', function(e){ drag = { x: e.clientX, o: offset }; curve.setPointerCapture(e.pointerId); });
+  curve.addEventListener('pointermove', function(e){ if (!drag) return; offset = drag.o - (e.clientX - drag.x) * 1.2; layout(); });
+  curve.addEventListener('pointerup', function(){ drag = null; });
+
+  /* buttons: ripple origin + magnetic */
+  document.querySelectorAll('.btn').forEach(function(b){ b.addEventListener('mouseenter', function(e){ var r = b.getBoundingClientRect(); b.style.setProperty('--x', (e.clientX - r.left) + 'px'); b.style.setProperty('--y', (e.clientY - r.top) + 'px'); }); });
+  if (fine && hasG && !reduce) document.querySelectorAll('.mag-off').forEach(function(b){
+    b.addEventListener('mousemove', function(e){ var r = b.getBoundingClientRect(); gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .25, y: (e.clientY - r.top - r.height / 2) * .35, duration: .4, ease: 'power3.out' }); });
+    b.addEventListener('mouseleave', function(){ gsap.to(b, { x: 0, y: 0, duration: .7, ease: 'elastic.out(1,.4)' }); });
+  });
+
+  /* tilt + glare tiles */
+  if (fine && hasG && !reduce) document.querySelectorAll('.tile').forEach(function(t){
+    t.addEventListener('mousemove', function(e){ var r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      t.style.setProperty('--gx', x * 100 + '%'); t.style.setProperty('--gy', y * 100 + '%');
+      gsap.to(t, { rotateY: (x - .5) * 12, rotateX: (.5 - y) * 10, scale: 1.02, duration: .5, ease: 'power3.out', transformPerspective: 900 }); });
+    t.addEventListener('mouseleave', function(){ gsap.to(t, { rotateY: 0, rotateX: 0, scale: 1, duration: .8, ease: 'elastic.out(1,.5)' }); });
+  });
+
+  /* annotation lines: run from the dot to just outside the profile */
+  function sizePts(){ document.querySelectorAll('.pt').forEach(function(p){ var w = p.parentElement.offsetWidth, x = p.offsetLeft; p.style.setProperty('--len', (p.classList.contains('pt--l') ? x + 56 : w - x + 56) + 'px'); }); }
+  sizePts(); window.addEventListener('resize', sizePts);
+
+  /* cross-section model switcher */
+  var xmodels = document.querySelectorAll('.xmodel'), xbtns = document.querySelectorAll('#xtabs button'), xword = document.getElementById('xword'), xcur = 0;
+  xbtns.forEach(function(b, i){ b.addEventListener('click', function(){
+    if (i === xcur) return; var prev = xmodels[xcur], next = xmodels[i]; xcur = i;
+    xbtns.forEach(function(x, k){ x.classList.toggle('on', k === i); });
+    var newWord = next.dataset.word, wordChanged = xword.textContent !== newWord;
+    function setWord(){ xword.innerHTML = newWord.split('').map(function(c){ return '<span>' + c + '</span>'; }).join(''); }
+    if (!hasG || reduce) { setWord(); prev.classList.remove('on'); next.classList.add('on'); sizePts(); return; }
+    /* calm crossfade: old model fades out, new one fades in, then its notes appear */
+    xmodels.forEach(function(m){ gsap.killTweensOf(m); gsap.killTweensOf(m.querySelectorAll('.pt__d,.pt__l,.pt__t,.dimline')); });
+    gsap.to(prev, { opacity: 0, scale: .97, duration: .45, ease: 'power2.in', onComplete: function(){ prev.classList.remove('on'); gsap.set(prev, { clearProps: 'opacity,scale' }); } });
+    next.classList.add('on'); sizePts();
+    var parts = next.querySelectorAll('.pt__d,.pt__l,.pt__t,.dimline');
+    gsap.set(parts, { opacity: 0 });
+    gsap.fromTo(next, { opacity: 0, scale: 1.03 }, { opacity: 1, scale: 1, duration: .9, delay: .35, ease: 'power2.out' });
+    gsap.to(parts, { opacity: 1, duration: .6, stagger: .05, delay: 1, ease: 'power1.out' });
+    if (wordChanged) gsap.to(xword, { opacity: 0, duration: .4, onComplete: function(){ setWord(); gsap.to(xword, { opacity: 1, duration: .8 }); } });
+  }); });
+
+  if (!hasG) return;
+  body.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+  gsap.registerPlugin(ScrollTrigger);
+
+  var lenis = null;
+  if (window.Lenis && !reduce) {
+    lenis = new Lenis({ lerp: 0.1 });
+    window.__lenis = lenis;
+    lenis.on('scroll', function(e){ ScrollTrigger.update(); boost += Math.min(6, Math.abs(e.velocity) * .08); });
+    gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){ var id = a.getAttribute('href'); if (id.length > 1 && document.querySelector(id)) { e.preventDefault(); lenis ? lenis.scrollTo(id, { duration: 1.4, offset: -40 }) : document.querySelector(id).scrollIntoView({ behavior: 'smooth' }); } });
+  });
+
+  var prog = document.getElementById('prog'), nav = document.getElementById('nav'), lastY = 0;
+  window.addEventListener('scroll', function(){ var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight; prog.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')'; nav.classList.toggle('hide', y > lastY && y > 500); lastY = y; }, { passive: true });
+
+  function count(el){ var to = +el.dataset.count, o = { v: 0 }; gsap.to(o, { v: to, duration: 2, ease: 'power2.out', onUpdate: function(){ el.textContent = Math.round(o.v); } }); }
+  if (reduce) { gsap.set('.rv', { opacity: 1, y: 0 }); document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent = el.dataset.count; }); return; }
+
+  /* HERO entrance */
+  gsap.timeline()
+    .from('.himg.on img', { scale: 1.35, duration: 2.4, ease: 'expo.out' })
+    .from('.hero__copy .eyebrow', { opacity: 0, y: 14, duration: .7 }, .2)
+    .from('.hero h1 .l > span', { yPercent: 110, duration: 1.1, stagger: .12, ease: 'expo.out' }, .3)
+    
+    .from('.pill', { y: 40, opacity: 0, scale: .94, duration: 1, ease: 'expo.out' }, .7)
+    .from('.hero__note, .hero__ctas > *',{ opacity: 0, y: 14, duration: .7, stagger: .07 }, .9)
+    .add(function(){ scene(0); }, 1);
+  gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
+    .to('.himg', { yPercent: 16, ease: 'none' }, 0)
+    .to('.hero__copy', { yPercent: -50, opacity: 0, ease: 'none' }, 0)
+    .to('.hero__dock', { y: -60, opacity: 0, ease: 'none' }, 0);
+
+  /* section headings */
+  gsap.utils.toArray('.sec .eyebrow, .sec .h2, .sec .lead, .xsec .h2').forEach(function(el){ gsap.from(el, { y: 26, opacity: 0, duration: .8, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } }); });
+
+  /* bento pop */
+  gsap.from('.tile', { clipPath: 'inset(30% 30% 30% 30% round 20px)', opacity: 0, scale: .9, duration: 1, stagger: .07, ease: 'expo.out', scrollTrigger: { trigger: '.bento', start: 'top 80%' } });
+
+  /* VEKA cross-section */
+  gsap.timeline({ scrollTrigger: { trigger: '#xstage', start: 'top 70%' } })
+    .from('.xsec__word span', { yPercent: 120, opacity: 0, duration: 1.1, stagger: .08, ease: 'expo.out' })
+    .from('#xprod', { y: -140, rotate: -16, opacity: 0, duration: 1.3, ease: 'expo.out' }, .2)
+    .from('.xmodel.on .pt__d', { scale: 0, duration: .5, stagger: .15, ease: 'back.out(3)' }, .9)
+    .from('.xmodel.on .pt__l', { scaleX: 0, duration: .6, stagger: .15, ease: 'power3.inOut' }, 1)
+    .from('.xmodel.on .pt__t', { opacity: 0, x: function(i, el){ return el.closest('.pt--r') ? 20 : -20; }, duration: .7, stagger: .15 }, 1.2);
+  gsap.to('#xprod', { y: -12, duration: 2.6, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+  var xstage = document.getElementById('xstage');
+  if (fine) xstage.addEventListener('mousemove', function(e){ var r = xstage.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5;
+    gsap.to('#xprod', { x: x * 24, duration: .9, ease: 'power3.out' });
+    gsap.to('.xsec__word', { x: -x * 50, duration: 1.2, ease: 'power3.out' }); });
+
+  /* compare */
+  gsap.from('.cpanel.on .ccard', { x: function(i){ return i ? 80 : -80; }, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.cmp__grid', start: 'top 80%' } });
+  gsap.from('.cpanel.on .czy', { scale: 0, rotate: -180, duration: .9, ease: 'back.out(2)', scrollTrigger: { trigger: '.cmp__grid', start: 'top 75%' } });
+  gsap.to('.czy', { scale: 1.08, duration: 1.2, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+
+  /* curved strip rises; rows drift */
+  gsap.from('#curve', { y: 120, rotateX: 16, opacity: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: '#curve', start: 'top 85%' } });
+  gsap.fromTo('#row1', { x: 0 }, { x: function(){ return -(document.getElementById('row1').scrollWidth - innerWidth) * .7; }, ease: 'none', scrollTrigger: { trigger: '.rows', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+  gsap.fromTo('#row2', { x: function(){ return -(document.getElementById('row2').scrollWidth - innerWidth) * .7; } }, { x: 0, ease: 'none', scrollTrigger: { trigger: '.rows', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+
+  /* TrustFlow */
+  gsap.from('.trust .wrap > *', { y: 30, opacity: 0, duration: .9, stagger: .08, ease: 'power3.out', scrollTrigger: { trigger: '.trust', start: 'top 80%' } });
+  gsap.fromTo('.trust__media img', { yPercent: -10 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: '.trust__media', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.fromTo('.trust__media', { clipPath: 'inset(0 6% 0 6% round 28px)' }, { clipPath: 'inset(0 0% 0 0% round 0px)', ease: 'none', scrollTrigger: { trigger: '.trust__media', start: 'top 90%', end: 'top 20%', scrub: true } });
+  var tstats = document.querySelectorAll('.tstat'), ti = 0;
+  ScrollTrigger.create({ trigger: '.tcard', start: 'top 85%', once: true, onEnter: function(){
+    document.querySelectorAll('.tcard [data-count]').forEach(count);
+    setInterval(function(){ tstats.forEach(function(s){ s.classList.remove('on'); }); ti = (ti + 1) % tstats.length; tstats[ti].classList.add('on'); }, 2200);
+  } });
+
+  /* process */
+  var stepEls = document.querySelectorAll('.step');
+  gsap.to('.steps__line i', { scaleX: 1, ease: 'none', scrollTrigger: { trigger: '.steps', start: 'top 70%', end: 'bottom 55%', scrub: true, onUpdate: function(s){ stepEls.forEach(function(st, i){ st.classList.toggle('on', s.progress >= i / (stepEls.length - 1) - .02); }); } } });
+  gsap.from('.step', { y: 30, opacity: 0, duration: .8, stagger: .12, ease: 'power3.out', scrollTrigger: { trigger: '.steps', start: 'top 80%' } });
+
+  ScrollTrigger.batch('.rv', { start: 'top 88%', onEnter: function(els){ gsap.to(els, { opacity: 1, y: 0, duration: .9, stagger: .1, ease: 'power3.out' }); } });
+  gsap.from('.cta', { scale: .92, borderRadius: 60, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.cta', start: 'top 85%' } });
+
+  window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>
